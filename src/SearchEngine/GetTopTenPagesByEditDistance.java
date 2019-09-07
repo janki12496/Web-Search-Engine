@@ -38,7 +38,10 @@ public class GetTopTenPagesByEditDistance {
 				for (int i = 0; i < 10; i++) {
 					input[i] = QuickSelect.select(distance, i);
 				}
-
+				for (int i = 0; i < 10; i++) {
+					if(input[i]==null)
+						input[i]=1000000;
+				}
 				for (int i = 0; i < 5; i++) {
 					smallest = smallest + input[i];
 				}
