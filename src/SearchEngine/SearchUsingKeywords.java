@@ -33,11 +33,13 @@ public class SearchUsingKeywords {
 		}
 		
 		System.out.println("\n\nResults:");		
-		if(flag==0) {
+		if(flag==0)  {
+			start=System.currentTimeMillis();
 			List<Entry<File, Integer>> topTenPagesByEditDistance=GetTopTenPagesByEditDistance.findeditdistance(searched);			 
+			end=System.currentTimeMillis();
 			for(int k=0;k<topTenPagesByEditDistance.size();k++) 
 				System.out.println(topTenPagesByEditDistance.get(k).getKey()); 
-	
+			System.out.println("\nResults obtained in- "+(end-start)/60+" seconds");
 		}
 		else{
 			start=System.currentTimeMillis();
